@@ -11,6 +11,10 @@ h2 {
   text-align: left;
 }
 
+h3 {
+  text-align: right;
+}
+
 form {
   text-align: left;
 }
@@ -20,4 +24,9 @@ input {
   padding: 12px 20px;
   margin: 6px 0;
   border: 1px solid black;
+  height: 8px;
+}
+
+#emailadd {
+  text-align: right;
 }
