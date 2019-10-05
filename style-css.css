@@ -1,5 +1,6 @@
 :root {
   font-family: "Raleway", sans-serif;
+  background-color: #d2d7df;
 }
 
 h1 {
@@ -7,9 +8,16 @@ h1 {
 }
 
 h2 {
-  text-align: right;
+  text-align: left;
 }
 
 form {
-  text-align: right;
+  text-align: left;
+}
+
+input {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  border: 1px solid black;
 }
