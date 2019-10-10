@@ -13,36 +13,59 @@
   </head>
   <body>
     <h1>Recipe Box</h1>
+    <div style="width: 100%">
+      <div style="float:left; width: 50%">
+        <h2>Sign Up</h2>
+        <form>
+          <ul class = "noBullets">
+            <li>
+              <input type="text" name="first-name-text-field" id="firstName" placeholder="First Name" />
+            </li>
+            <li>
+              <input type="text" name="last-name-text-field" id="lastName" placeholder="Last Name"/>
+            </li>
+            <li>
+              <input type="text" name="email-address-text-field" id="email" placeholder="Email Address"/>
+            </li>
+            <li>
+              <input type="password" name="password-text-field" id="password" placeholder="Password" />
+            </li>
+            <li>
+                <input type="text" name="reenter-password-field" id="reenterPassword" placeholder="Re-enter Password">
+              </li>
+            <li>
+              <section class="submission">
+                <button type="submit" value="Submit">Submit</button>
+              </section>
+            </li>
+          </ul>
+        </form>
+      </div>
 
-    <h2>Sign Up</h2>
-
-    <h3>Sign In</h3>
-
-    <form>
-      <label for="firstname">First Name:</label>
-      <input type="text" name="first-name-text-field" id="firstname" />
-      <br />
-      <label for="lastname">Last Name:</label>
-      <input type="text" name="last-name-text-field" id="lastname" />
-      <br />
-      <label for="email">Email Address:</label>
-      <input type="text" name="email-address-text-field" id="email" />
-      <br />
-      <label for="password">Create Password:</label>
-      <input type="password" name="password-text-field" id="password" />
-      >
-      <br />
-      <section class="submission">
-        <input type="submit" value="Submit" />
-      </section>
-</form>
-<form id="emailadd">
-<label for="emailadd">Email Address:</label>
-  <input type="text" name="email-add-text-field" id="emailadd" />
-  <br>
-  <label for="loginpassword">Password:</label>
-  <input type="text" name="login-password-text-field" id="loginpassword" />
-</form>
-
+      <div style="float:right; width: 50%">
+        <h2>Sign In</h2>
+        <form id="emailAdd">
+          <ul class="noBullets">
+          <li>
+          <input type="text" name="email-add-text-field" id="emailAdd" placeholder="Email Address" />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="login-password-text-field"
+            id="loginPassword"
+            placeholder="Password"
+          />
+          </li>
+          <li>
+          <section class="submission">
+            <button type="submit" value="Submit">Submit</button>
+          </section>
+          </li>
+        </form>
+      </ul>
+      </div>
+    </div>
+    <div style="clear:both"></div>
   </body>
 </html>
