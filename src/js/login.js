@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 function submitForm() {
     if(validateUser(document.getElementById('existingUser').value, document.getElementById('existingPassword').value)) {
-        window.open('src/Welcome.html', '_self')
+        window.open('src/html/Welcome.html', '_self')
     } else {
         alert("Incorrect username or password")
     }
