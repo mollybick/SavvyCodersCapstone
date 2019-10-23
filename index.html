@@ -13,22 +13,47 @@
       <div style="float:left; width: 50%">
         <h2>Sign Up</h2>
         <form>
-          <ul class = "noBullets">
+          <ul class="noBullets">
             <li>
-              <input type="text" name="first-name-text-field" id="firstName" placeholder="First Name" />
+              <input
+                type="text"
+                name="first-name-text-field"
+                id="firstName"
+                placeholder="First Name"
+              />
             </li>
             <li>
-              <input type="text" name="last-name-text-field" id="lastName" placeholder="Last Name"/>
+              <input
+                type="text"
+                name="last-name-text-field"
+                id="lastName"
+                placeholder="Last Name"
+              />
             </li>
             <li>
-              <input type="text" name="email-address-text-field" id="newUser" placeholder="Email Address"/>
+              <input
+                type="text"
+                name="email-address-text-field"
+                id="newUser"
+                placeholder="Email Address"
+              />
             </li>
             <li>
-              <input type="password" name="password-text-field" id="newPassword" placeholder="Password" />
+              <input
+                type="password"
+                name="password-text-field"
+                id="newPassword"
+                placeholder="Password"
+              />
             </li>
             <li>
-                <input type="text" name="reenter-password-field" id="reenterPassword" placeholder="Re-enter Password">
-              </li>
+              <input
+                type="text"
+                name="reenter-password-field"
+                id="reenterPassword"
+                placeholder="Re-enter Password"
+              />
+            </li>
             <li>
               <section class="submission">
                 <button type="submit" value="Submit">Submit</button>
@@ -42,25 +67,53 @@
         <h2>Sign In</h2>
         <form>
           <ul class="noBullets">
-          <li>
-          <input type="text" name="userName" id="existingUser" placeholder="Email Address" />
-        </li>
-        <li>
-          <input
-            type="password"
-            name="password"
-            id="existingPassword"
-            placeholder="Password"
-          />
-          </li>
-          <li>
-            <button type="button" onclick="submitForm()">Submit</button>
-          </li>
+            <li>
+              <input
+                type="text"
+                name="userName"
+                id="existingUser"
+                placeholder="Email Address"
+              />
+            </li>
+            <li>
+              <input
+                type="password"
+                name="password"
+                id="existingPassword"
+                placeholder="Password"
+              />
+            </li>
+            <li>
+              <button type="button" onclick="submitForm()">Submit</button>
+            </li>
           </ul>
         </form>
       </div>
     </div>
     <div style="clear:both"></div>
     <script src="src/js/login.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAv9s312982dXVtvqJcR1q4oi7LBKGbs3E",
+        authDomain: "recipe-box-510b1.firebaseapp.com",
+        databaseURL: "https://recipe-box-510b1.firebaseio.com",
+        projectId: "recipe-box-510b1",
+        storageBucket: "recipe-box-510b1.appspot.com",
+        messagingSenderId: "453464782983",
+        appId: "1:453464782983:web:ade3658c4fb82776ad2022",
+        measurementId: "G-VVB0DQTM1H"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>

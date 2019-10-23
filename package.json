@@ -34,6 +34,9 @@
     "stylelint-prettier": "^1.1.1"
   },
   "dependencies": {
+    "@firebase/app": "^0.4.20",
+    "@firebase/auth": "^0.12.2",
+    "@firebase/firestore": "^1.6.2",
     "materialize-css": "^1.0.0-rc.2"
   }
 }
