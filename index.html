@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style-css.css" type="text/css" />
     <title>Recipe Box</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
   </head>
   <body>
     <h1>Recipe Box</h1>
@@ -17,25 +24,9 @@
             <li>
               <input
                 type="text"
-                name="first-name-text-field"
-                id="firstName"
-                placeholder="First Name"
-              />
-            </li>
-            <li>
-              <input
-                type="text"
-                name="last-name-text-field"
-                id="lastName"
-                placeholder="Last Name"
-              />
-            </li>
-            <li>
-              <input
-                type="text"
                 name="email-address-text-field"
                 id="newUser"
-                placeholder="Email Address"
+                placeholder="Username"
               />
             </li>
             <li>
@@ -48,7 +39,7 @@
             </li>
             <li>
               <input
-                type="text"
+                type="password"
                 name="reenter-password-field"
                 id="reenterPassword"
                 placeholder="Re-enter Password"
@@ -56,7 +47,7 @@
             </li>
             <li>
               <section class="submission">
-                <button type="submit" value="Submit">Submit</button>
+                <button id="signUp" type="submit" value="Submit">Submit</button>
               </section>
             </li>
           </ul>
@@ -72,7 +63,7 @@
                 type="text"
                 name="userName"
                 id="existingUser"
-                placeholder="Email Address"
+                placeholder="Username"
               />
             </li>
             <li>
@@ -84,24 +75,17 @@
               />
             </li>
             <li>
-              <button type="button" onclick="submitForm()">Submit</button>
+              <button id = "signIn" type="button">Submit</button>
             </li>
           </ul>
         </form>
       </div>
     </div>
     <div style="clear:both"></div>
-    <script src="src/js/login.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
 
     <script>
       // Your web app's Firebase configuration
-      var firebaseConfig = {
+      const config = {
         apiKey: "AIzaSyAv9s312982dXVtvqJcR1q4oi7LBKGbs3E",
         authDomain: "recipe-box-510b1.firebaseapp.com",
         databaseURL: "https://recipe-box-510b1.firebaseio.com",
@@ -112,8 +96,11 @@
         measurementId: "G-VVB0DQTM1H"
       };
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
       firebase.analytics();
     </script>
+    <script src="src/js/login.js"></script>
+    <script src="src/js/welcome.js"></script>
   </body>
 </html>
