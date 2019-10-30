@@ -5,6 +5,12 @@
 
 h1 {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+background: #FFC2E2;
+font-family: 'Quicksand', sans-serif;
 }
 
 input {
