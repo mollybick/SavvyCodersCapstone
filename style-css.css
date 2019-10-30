@@ -5,12 +5,12 @@
 
 h1 {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 body {
-background: #FFC2E2;
-font-family: 'Quicksand', sans-serif;
+  background: #ffc2e2;
+  font-family: "Quicksand", sans-serif;
 }
 
 input {
@@ -65,13 +65,11 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover
-{
+a:hover {
   color: tomato;
 }
 
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   top: 50px;
@@ -97,8 +95,7 @@ a:hover
   -webkit-touch-callout: none;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   cursor: pointer;
 }
 
@@ -112,9 +109,8 @@ a:hover
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-  opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -125,21 +121,18 @@ a:hover
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -154,7 +147,7 @@ a:hover
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -172,11 +165,11 @@ a:hover
 details {
   border: 1px transparent;
   border-radius: 4px;
-  padding: .5em .5em 0;
+  padding: 0.5em 0.5em 0;
 }
 
 summary {
   font-weight: bold;
-  margin: -.5em -.5em 0;
-  padding: .5em;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
 }
