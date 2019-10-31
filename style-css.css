@@ -260,3 +260,7 @@ summary {
   opacity: 1;
   pointer-events: auto;
 }
+
+#newRec {
+  width: 60%
+}
