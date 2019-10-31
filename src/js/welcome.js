@@ -199,5 +199,4 @@ if(trigger)
 if(closeButton)
     closeButton.addEventListener("click", toggleModal);
 if(window)
-    window.addEventListener("click", windowOnClick);
-
+    window.addEventListener("click", windowOnClick); 
