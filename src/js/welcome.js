@@ -1,25 +1,15 @@
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
 const closeButton = document.querySelector(".close-button");
-// const myRecipes = document.getElementById("my-recipes");
-// const sharedRecipes = document.getElementById("shared-recipes");
+// looks into URL for username param
 const username = new URLSearchParams(window.location.search).get("username");
 
-
+// Onload means upon loading, this function should execute
 window.onload = async function() {
     await renderAllRecipes();
 };
 
-// if(myRecipes)
-//     myRecipes.addEventListener('click', () => {
-//         window.open(window.location, '_self');
-//     });
-//
-// if(sharedRecipes)
-//     sharedRecipes.addEventListener('click', () => {
-//         window.open('./sharedRecipes.html?username='+username, '_self');
-//     });
-
+// calling all recipes within all catagories from Firebase
 async function renderAllRecipes() {
     let allRecipes = await retrieveAllRecipes();
     await renderBreakfast(allRecipes);
@@ -90,23 +80,29 @@ async function retrieveAllRecipes() {
         .collection('recipes').get();
 }
 
+// Adds all recipes of individual categories into the UL of that category
 function renderRecipes(recipes, listItem){
     recipes.forEach((recipe) => {
+        // creates li object
         let li = document.createElement('li');
+        // creates the span
         let recipeName = document.createElement('span');
-        // let city = document.createElement('span');
+        // creates recipe ID which is a combo of category + name
         let recipeId = recipe.data().category + '-' + recipe.data().name;
+        // setting the id for the LI item
         li.setAttribute('id', recipeId);
+        // adding text content to recipe name tag/span
         recipeName.textContent = recipe.data().name;
-        // city.textContent = recipe.data().city;
+        // Uses assigned recipe ID to pop up recipe when clicked
         recipeName.addEventListener('click', displayRecipe.bind(recipeId, recipe.data()));
+        // appendChild adds child tag to the parent element tag
         li.appendChild(recipeName);
-        // li.appendChild(city);
 
         listItem.appendChild(li);
     })
 }
 
+// Dynamically creating recipe display modal
 function displayRecipe(recipeData) {
     const modalDiv = document.getElementById("recipe-modal");
     let title = document.createElement('h1');
@@ -137,34 +133,42 @@ function displayRecipe(recipeData) {
     document.getElementById('recipe-modal').classList.add('is-visible');
 }
 
+// brings up/closes recipe display modal
 function toggleModal() {
     modal.classList.toggle("show-modal");
 }
 
+// displays recipe modal until you click away from the modal
 function windowOnClick(event) {
     if (event.target === modal) {
         toggleModal();
     }
 }
 
+// Assigning a variable to new recipe button
 const newRecipeSubmit = document.querySelector("#newRecipe");
 
 if(newRecipeSubmit)
+// gets data user inputs into recipe input field
     newRecipeSubmit.addEventListener('click', async (e) => {
         const category = document.getElementById('category').value;
         const recipeName = document.getElementById('newRecipeName').value;
         const ingredients = document.getElementById('newIngredients').value;
         const instructions = document.getElementById('newInstructions').value;
         e.preventDefault();
+        // awaiting adding new recipe to Firebase
+        // after call to Firebase is complete and recipe is added, empties input fields
         await addRecipe(category, recipeName, ingredients, instructions);
         document.getElementById('category').value = '';
         document.getElementById('newRecipeName').value = '';
         document.getElementById('newIngredients').value = '';
         document.getElementById('newInstructions').value = '';
+        // reload forces a refresh on page in order to show newly added recipes
         location.reload();
         alert("Successfully added recipe");
     });
 
+    // Adds recipe by user to Firebase
 function addRecipe(category, name, ingredients, instructions){
     return db.collection('users').doc(username).collection('recipes')
         .doc(name).set({category, name, instructions, ingredients}).then(() => true);
@@ -194,9 +198,10 @@ function clearModal() {
     document.getElementById('recipe-modal').classList.remove('is-visible');
 }
 
+// If conditions are added to safeguard creation of event listeners before elements are rendered
 if(trigger)
     trigger.addEventListener("click", toggleModal);
 if(closeButton)
     closeButton.addEventListener("click", toggleModal);
 if(window)
-    window.addEventListener("click", windowOnClick); 
+    window.addEventListener("click", windowOnClick);
